@@ -18,3 +18,11 @@ jobs:
           command: "embulk --version"
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run ShellCheck
+        run: shellcheck bin/*
