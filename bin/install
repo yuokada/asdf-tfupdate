@@ -27,11 +27,13 @@ install_tfupdate() {
   (
     mkdir -p "${install_bin_path}"
 
-    local platform="$(uname -s)"
+    local platform=""
+    platform="$(uname -s)"
+
     if [ "Darwin" = "$platform" ]; then
-      curl -L -C - https://github.com/minamijoyo/tfupdate/releases/download/v${version}/tfupdate_${version}_darwin_amd64.tar.gz | tar zxf - -C ${install_bin_path} tfupdate
+      curl -L -C - "https://github.com/minamijoyo/tfupdate/releases/download/v${version}/tfupdate_${version}_darwin_amd64.tar.gz" | tar zxf - -C "${install_bin_path}" tfupdate
     else
-      curl -L -C - https://github.com/minamijoyo/tfupdate/releases/download/v${version}/tfupdate_${version}_linux_amd64.tar.gz  | tar zxf - -C ${install_bin_path} tfupdate
+      curl -L -C - "https://github.com/minamijoyo/tfupdate/releases/download/v${version}/tfupdate_${version}_linux_amd64.tar.gz"  | tar zxf - -C "${install_bin_path}" tfupdate
     fi
     echo "The installation was successful!"
 
