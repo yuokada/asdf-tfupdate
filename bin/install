@@ -50,7 +50,7 @@ install_tfupdate() {
   (
     mkdir -p "${install_bin_path}"
 
-    curl -L -C - "https://github.com/minamijoyo/tfupdate/releases/download/v${version}/tfupdate_${version}_${plaform}_${arch}  .tar.gz"  | tar zxf - -C "${install_bin_path}" tfupdate
+    curl -L -C - "https://github.com/minamijoyo/tfupdate/releases/download/v${version}/tfupdate_${version}_${platform}_${arch}.tar.gz"  | tar zxf - -C "${install_bin_path}" tfupdate
     echo "The installation was successful!"
 
   ) || (
