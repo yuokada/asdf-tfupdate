@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -xeo pipefail
 
 fail() {
   echo -e "\e[31mFail:\e[m $*"
